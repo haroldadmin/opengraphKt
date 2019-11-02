@@ -3,7 +3,7 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 plugins {
     `java-library`
     kotlin("jvm")
-    `maven-publish`
+    `maven`
 }
 
 group = "com.github.haroldadmin"

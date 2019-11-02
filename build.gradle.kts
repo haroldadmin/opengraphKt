@@ -1,5 +1,9 @@
 version = ProjectProperties.versionName
 
+plugins {
+    `maven`
+}
+
 buildscript {
     repositories {
         jcenter()

@@ -1,3 +1,4 @@
+rootProject.name = 'opengraphKt'
 include ':parser'
 include ':sample'
 
