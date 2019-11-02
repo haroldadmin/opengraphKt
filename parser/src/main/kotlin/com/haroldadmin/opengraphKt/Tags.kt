@@ -88,5 +88,9 @@ inline class Tags(private val tags: Map<String, List<String>>) {
     private fun extractImageUrl(): List<String> {
         return tags["image"] ?: tags["image:url"] ?: tags["image:secure_url"] ?: emptyList()
     }
+
+    override fun toString(): String = buildString {
+        tags.forEach { (property, content) -> appendln("$property: $content") }
+    }
 }
 
