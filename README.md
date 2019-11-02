@@ -34,4 +34,21 @@ Please feel free to open issues or contribute new features through pull requests
 
 ## Download
 
-*Instructions to be added soon...*
+The library is published on Jitpack. Make sure to add it as a repository to your `build.gradle` file:
+
+```groovy
+allprojects {
+  repositories {
+    ...
+    maven { url 'https://jitpack.io' }
+  }
+}
+```
+
+And then add the library dependency:
+```groovy
+dependencies {
+  implementation "com.github.haroldadmin:opengraphKt:(latest-version)"
+}
+```
+[![Latest Version](https://jitpack.io/v/haroldadmin/opengraphKt.svg)](https://jitpack.io/#haroldadmin/opengraphKt)
