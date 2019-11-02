@@ -3,7 +3,11 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 plugins {
     `java-library`
     kotlin("jvm")
+    `maven-publish`
 }
+
+group = "com.github.haroldadmin"
+version = ProjectProperties.versionName
 
 java {
     sourceCompatibility = JavaVersion.VERSION_1_8
