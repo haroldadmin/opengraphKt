@@ -28,7 +28,6 @@ internal class ParserTest {
         }.use { server ->
             val fileUrl = server.url("/ogp").toUrl()
             with(fileUrl.getOpenGraphTags()) {
-                val tags = this
                 assert(title == "Open Graph protocol")
                 assert(url == "http://ogp.me/")
                 assert(image == "http://ogp.me/logo.png")
