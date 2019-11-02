@@ -1,5 +1,7 @@
 # OpenGraphKt
 
+[![Build Status](https://github.com/haroldadmin/opengraphKt/workflows/Gradle%20Build/badge.svg)](https://github.com/haroldadmin/opengraphKt/actions)
+
 A dead simple [OpenGraph Tags](https://ogp.me/) parser for Kotlin, built using Coroutines and [Jsoup](https://jsoup.org/).
 
 ## Usage
