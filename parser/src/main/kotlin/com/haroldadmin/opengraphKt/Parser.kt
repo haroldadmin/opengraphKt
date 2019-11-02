@@ -5,6 +5,7 @@ import kotlinx.coroutines.withContext
 import org.jsoup.Jsoup
 import org.jsoup.nodes.Document
 import org.jsoup.nodes.Element
+import java.io.File
 import java.net.URL
 
 internal object Parser {
@@ -23,6 +24,11 @@ internal object Parser {
     suspend fun parse(html: String): Tags = withContext(Dispatchers.IO) {
         val document = Jsoup.parse(html)
         extractTags(document)
+    }
+
+    suspend fun parse(file: File): Tags = withContext(Dispatchers.IO) {
+        val html = file.readText()
+        parse(html)
     }
 
     fun clearCache() {
