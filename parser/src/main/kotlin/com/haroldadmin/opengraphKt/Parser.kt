@@ -10,16 +10,14 @@ import java.net.URL
 
 internal object Parser {
 
-    val cache: MutableMap<URL, Tags> = mutableMapOf()
+    val cache: Cache<URL, Tags> = Cache()
 
     suspend fun parse(url: URL): Tags = withContext(Dispatchers.IO) {
-        cache[url] ?: run {
+        cache.computeIfAbsent(url) {
             val document = Jsoup.connect(url.toString()).get()
-            val tags = extractTags(document)
-            cacheTags(url, tags)
-            tags
+            extractTags(document)
         }
-    }
+   }
 
     suspend fun parse(html: String): Tags = withContext(Dispatchers.IO) {
         val document = Jsoup.parse(html)
@@ -46,10 +44,6 @@ internal object Parser {
                 }
 
         Tags(openGraphTags)
-    }
-
-    private fun cacheTags(url: URL, tags: Tags) = synchronized(cache) {
-        cache[url] = tags
     }
 
     private fun Element.isOpenGraphTag(): Boolean {
